@@ -4,7 +4,7 @@
   "description": "MCP-server for sanntidsdata fra Ruter/Entur — er bussen i rute?",
   "type": "module",
   "license": "MIT",
-  "author": "fredrsat",
+  "author": "Fredrik Sætre",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fredrsat/ruter-connector.git"
