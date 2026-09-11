@@ -1,0 +1,27 @@
+{
+  "name": "ruter-connector",
+  "version": "1.0.0",
+  "description": "MCP-server for sanntidsdata fra Ruter/Entur — er bussen i rute?",
+  "type": "module",
+  "license": "MIT",
+  "author": "fredrsat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrsat/ruter-connector.git"
+  },
+  "keywords": ["mcp", "modelcontextprotocol", "entur", "ruter", "kollektivtrafikk", "sanntid"],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx src/smoke.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.21.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
