@@ -1,0 +1,23 @@
+# ruter-connector
+
+> MCP-server som gir AI-agenter sanntidsdata for norsk kollektivtrafikk (buss, trikk, t-bane, tog, båt) — er bussen i rute?
+
+Dataene hentes fra Enturs åpne API-er (Geocoder for stoppestedssøk, JourneyPlanner v3 GraphQL for avganger og sanntid), som dekker hele Norge — ikke bare Ruter-området. Ingen API-nøkkel kreves, men Entur ber konsumenter identifisere seg via miljøvariabelen `ET_CLIENT_NAME`.
+
+To verktøy: `finn_stoppested` (navnesøk → NSR-id-er) og `avganger` (sanntidsavganger med forsinkelse, status og avvik, filtrerbart på linje/destinasjon/tidspunkt). Teknisk: TypeScript/Node.js 18+, `@modelcontextprotocol/sdk` over stdio, kjøres med `tsx`. Data er NLOD-lisensiert fra Entur; koden er MIT.
+
+## Dokumentasjon
+
+- [README](https://github.com/fredrsat/ruter-connector/blob/main/README.md): Verktøybeskrivelser med JSON-eksempler, installasjon, MCP-klientoppsett og konfigurasjon
+- [LICENSE](https://github.com/fredrsat/ruter-connector/blob/main/LICENSE): MIT-lisens
+
+## Kildekode
+
+- [index.ts](https://github.com/fredrsat/ruter-connector/blob/main/src/index.ts): MCP-serveren — verktøydefinisjoner og formatering av svar
+- [entur.ts](https://github.com/fredrsat/ruter-connector/blob/main/src/entur.ts): Entur-klient (Geocoder + JourneyPlanner GraphQL)
+- [smoke.ts](https://github.com/fredrsat/ruter-connector/blob/main/src/smoke.ts): Røyktest mot Entur uten MCP-laget (`npm run smoke`)
+
+## Valgfritt
+
+- [package.json](https://github.com/fredrsat/ruter-connector/blob/main/package.json): Avhengigheter og scripts
+- [tsconfig.json](https://github.com/fredrsat/ruter-connector/blob/main/tsconfig.json): TypeScript-oppsett
